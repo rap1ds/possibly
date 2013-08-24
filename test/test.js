@@ -22,4 +22,10 @@ describe('Option', function() {
     expect(None().isNone()).to.be.eql(true);
     expect(Some(null).isNone()).to.be.eql(false);
   });
+
+  it('#valueOrElse', function() {
+    expect(Some('value').valueOrElse('default value')).to.be.eql('value');
+    expect(Some(null).valueOrElse('default value')).to.be.eql(null);
+    expect(None().valueOrElse('default value')).to.be.eql('default value');
+  });
 });

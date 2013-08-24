@@ -20,7 +20,7 @@ noneOpt.isNone()  // true
 
 ```javascript
 someOpt.valueOf()  // 'value'
-noneOpt.valueOf()  // null
+noneOpt.valueOf()  // undefined
 ```
 
 ## Access the value, or else...
@@ -43,9 +43,9 @@ someOpt.map(function(value) {
 noneOpt.map(function(value) {
   return value.toUpperCase()
 });
-// => null
+// => undefined
 
-/* Filter */
+/* TODO Filter */
 someOpt.filter(function(value) {
   return value !== ''
 });
@@ -56,7 +56,7 @@ noneOpt.filter(function(value) {
 });
 // => 'null'
 
-/* Each */
+/* TODO Each */
 someOpt.forEach(function(value) {
   alert(value);
 });

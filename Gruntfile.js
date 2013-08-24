@@ -12,28 +12,9 @@ module.exports = function(grunt) {
     },
     lint: {
       files: ['Gruntfile', 'lib/**/*.js', 'test/**/*.js']
-    },
-
-    jshint: {
-      options: {
-        curly: true,
-        eqeqeq: true,
-        immed: true,
-        latedef: true,
-        newcap: false,
-        noarg: true,
-        sub: true,
-        undef: true,
-        boss: true,
-        eqnull: true
-      },
-      globals: {
-        it: true,
-        describe: true
-      }
     }
   });
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'mochaTest']);
+  grunt.registerTask('default', ['mochaTest']);
 };

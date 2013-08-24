@@ -1,0 +1,35 @@
+{
+  "name": "option",
+  "description": "Option structure in JavaScript",
+  "version": "0.0.1",
+  "homepage": "https://github.com/rap1ds/option",
+  "author": {
+    "name": "Mikko Koski",
+    "email": "mikkokos@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rap1ds/option.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rap1ds/option/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/rap1ds/option/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/option",
+  "keywords": [
+    "option",
+    "some",
+    "none"
+  ],
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-mocha-test": "~0.6.3",
+    "grunt-contrib-jshint": "~0.6.3",
+    "expect.js": "~0.2.0"
+  }
+}

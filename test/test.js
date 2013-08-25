@@ -61,4 +61,28 @@ describe('Option', function() {
     None().forEach(incr);
     expect(called).to.be.eql(1);
   });
+
+  it('#every', function() {
+    var truthy = function(val) {
+      return !!val;
+    };
+
+    expect(Some(true).every(truthy)).to.be.eql(true);
+    expect(Some(false).every(truthy)).to.be.eql(false);
+
+    // return true because "all" element (i.e. none) the function return true
+    expect(None().every(truthy)).to.be.eql(true);
+  });
+
+  it('#some', function() {
+    var truthy = function(val) {
+      return !!val;
+    };
+
+    expect(Some(true).some(truthy)).to.be.eql(true);
+    expect(Some(false).some(truthy)).to.be.eql(false);
+
+    // return true because "none" of the elements returned true
+    expect(None().some(truthy)).to.be.eql(false);
+  });
 });

@@ -48,4 +48,17 @@ describe('Option', function() {
     expect(None().filter(even)).to.be.eql(undefined);
   });
 
+  it('#forEach', function() {
+    var called = 0;
+
+    var incr = function() {
+      called++;
+    };
+
+    expect(called).to.be.eql(0);
+    Some(1).forEach(incr);
+    expect(called).to.be.eql(1);
+    None().forEach(incr);
+    expect(called).to.be.eql(1);
+  });
 });

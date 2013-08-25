@@ -37,4 +37,15 @@ describe('Option', function() {
       return val.toUpperCase();
     })).to.be.eql(undefined);
   });
+
+  it('#filter', function() {
+    var even = function(val) {
+      return val % 2 === 0;
+    };
+
+    expect(Some(1).filter(even)).to.be.eql(undefined);
+    expect(Some(2).filter(even)).to.be.eql(2);
+    expect(None().filter(even)).to.be.eql(undefined);
+  });
+
 });

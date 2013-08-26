@@ -111,4 +111,10 @@ describe('Option', function() {
     // ReduceRight raises error if empty array is reduced without initial value
     expect(function() { None().reduceRight(add); }).to.throwError();
   });
+
+  it('#join', function() {
+    expect(Some(1).join('')).to.be.eql('1');
+    expect(Some(undefined).join('')).to.be.eql('');
+    expect(None().join('')).to.be.eql('');
+  });
 });

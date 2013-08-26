@@ -98,4 +98,17 @@ describe('Option', function() {
     // Reduce raises error if empty array is reduced without initial value
     expect(function() { None().reduce(add); }).to.throwError();
   });
+
+  it('#reduceRight', function() {
+    var add = function(a, b) {
+      return a + b;
+    };
+
+    expect(Some(1).reduceRight(add)).to.be.eql(1);
+    expect(Some(1).reduceRight(add, 2)).to.be.eql(3);
+    expect(Some(undefined).reduceRight(add)).to.be.eql(undefined);
+    expect(None().reduceRight(add, 0)).to.be.eql(0);
+    // ReduceRight raises error if empty array is reduced without initial value
+    expect(function() { None().reduceRight(add); }).to.throwError();
+  });
 });

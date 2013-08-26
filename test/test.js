@@ -128,4 +128,17 @@ describe('Option', function() {
     expect(None().slice(0, 0)).to.be.eql([]);
     expect(None().slice(0, 1)).to.be.eql([]);
   });
+
+  it('#lastIndexOf', function() {
+    expect(Some(1).lastIndexOf(1)).to.be.eql(0);
+    expect(Some(1).lastIndexOf(1, 0)).to.be.eql(0);
+    expect(Some(1).lastIndexOf(1, 1)).to.be.eql(0);
+    expect(Some(1).lastIndexOf(1, -1)).to.be.eql(0);
+    expect(Some(1).lastIndexOf(0)).to.be.eql(-1);
+    expect(None().lastIndexOf(1)).to.be.eql(-1);
+    expect(None().lastIndexOf(1, 0)).to.be.eql(-1);
+    expect(None().lastIndexOf(1, 1)).to.be.eql(-1);
+    expect(None().lastIndexOf(1, -1)).to.be.eql(-1);
+    expect(None().lastIndexOf(0)).to.be.eql(-1);
+  });
 });

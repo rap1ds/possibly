@@ -141,4 +141,10 @@ describe('Option', function() {
     expect(None().lastIndexOf(1, -1)).to.be.eql(-1);
     expect(None().lastIndexOf(0)).to.be.eql(-1);
   });
+
+  it('#concat', function() {
+    expect(Some(1).concat([2, 3])).to.be.eql([1, 2, 3]);
+    expect(Some().concat([2, 3])).to.be.eql([undefined, 2, 3]);
+    expect(None().concat([2, 3])).to.be.eql([2, 3]);
+  });
 });

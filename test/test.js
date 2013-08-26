@@ -117,4 +117,15 @@ describe('Option', function() {
     expect(Some(undefined).join('')).to.be.eql('');
     expect(None().join('')).to.be.eql('');
   });
+
+  it('#slice', function() {
+    expect(Some(1).slice(0, 0)).to.be.eql([]);
+    expect(Some(1).slice(0, 1)).to.be.eql([1]);
+    expect(Some(1).slice(0, 5)).to.be.eql([1]);
+    expect(Some(1).slice(1, 1)).to.be.eql([]);
+    expect(Some(1).slice(-1)).to.be.eql([1]);
+    expect(Some(1).slice(-2)).to.be.eql([1]);
+    expect(None().slice(0, 0)).to.be.eql([]);
+    expect(None().slice(0, 1)).to.be.eql([]);
+  });
 });

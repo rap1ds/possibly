@@ -85,4 +85,17 @@ describe('Option', function() {
     // return true because "none" of the elements returned true
     expect(None().some(truthy)).to.be.eql(false);
   });
+
+  it('#reduce', function() {
+    var add = function(a, b) {
+      return a + b;
+    };
+
+    expect(Some(1).reduce(add)).to.be.eql(1);
+    expect(Some(1).reduce(add, 2)).to.be.eql(3);
+    expect(Some(undefined).reduce(add)).to.be.eql(undefined);
+    expect(None().reduce(add, 0)).to.be.eql(0);
+    // Reduce raises error if empty array is reduced without initial value
+    expect(function() { None().reduce(add); }).to.throwError();
+  });
 });

@@ -147,4 +147,20 @@ describe('Option', function() {
     expect(Some().concat([2, 3])).to.be.eql([undefined, 2, 3]);
     expect(None().concat([2, 3])).to.be.eql([2, 3]);
   });
+
+  it('#indexOf', function() {
+    expect(Some(1).indexOf(1)).to.be.eql(0);
+    expect(Some(1).indexOf(1, 0)).to.be.eql(0);
+    expect(Some(1).indexOf(1, 1)).to.be.eql(-1);
+    expect(Some(1).indexOf(1, -1)).to.be.eql(0);
+    expect(Some(1).indexOf(0)).to.be.eql(-1);
+    expect(None().indexOf(1)).to.be.eql(-1);
+    expect(None().indexOf(1, 0)).to.be.eql(-1);
+    expect(None().indexOf(1, 1)).to.be.eql(-1);
+    expect(None().indexOf(1, -1)).to.be.eql(-1);
+    expect(None().indexOf(0)).to.be.eql(-1);
+  });
+  
+  it.skip('#sort', function() { /* Todo */ });
+  it.skip('#reverse', function() { /* Todo */ });
 });

@@ -176,6 +176,10 @@ describe('Option', function() {
     expect(Some(undefined).sort(compare)).to.be.eql(undefined);
     expect(None().sort(compare)).to.be.eql(undefined);
   });
-  
-  it.skip('#reverse', function() { /* Todo */ });
+
+  it('#reverse', function() {
+    expect(Some(1).reverse()).to.be.eql(1);
+    expect(Some(undefined).reverse()).to.be.eql(undefined);
+    expect(None().reverse()).to.be.eql(undefined);
+  });
 });

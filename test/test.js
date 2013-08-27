@@ -160,7 +160,22 @@ describe('Option', function() {
     expect(None().indexOf(1, -1)).to.be.eql(-1);
     expect(None().indexOf(0)).to.be.eql(-1);
   });
+
+  it('#sort', function() {
+    var compare = function(a, b) {
+      if(a < b) {
+        return -1;
+      } else if (a > b) {
+        return 1;
+      } else {
+        return 0;
+      }
+    };
+
+    expect(Some(1).sort(compare)).to.be.eql(1);
+    expect(Some(undefined).sort(compare)).to.be.eql(undefined);
+    expect(None().sort(compare)).to.be.eql(undefined);
+  });
   
-  it.skip('#sort', function() { /* Todo */ });
   it.skip('#reverse', function() { /* Todo */ });
 });

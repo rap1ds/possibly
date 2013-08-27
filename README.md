@@ -71,4 +71,23 @@ noneOpt.forEach(function(value) {
 
 ## Wait, what? Map, filter, every and co. are array methods. How do they apply to Option structure?
 
-Think Option as an array with either one or none elements. E.g. map over `Some` is same as mapping over an array with only one element. And in fact, the Option library doesn't implement its own `map`, `filter` etc. methods, instead it uses native array methods.
+Think Option as an array with either one or none elements. E.g. map over `Some` is same as mapping over an array with only one element. Similarly, map over `None` is same as mapping over an array with no elements. And in fact, the Option library doesn't implement its own `map`, `filter` etc. methods, instead it uses native array methods.
+
+Following array methods are supported:
+
+* map
+* filter
+* forEach
+* every
+* sort
+* reverse
+* forEach
+* every
+* some
+* reduce
+* reduceRight
+* join
+* slice
+* lastIndexOf
+* concat
+* indexOf

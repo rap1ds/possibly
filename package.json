@@ -2,22 +2,22 @@
   "name": "optional",
   "description": "Option structure in JavaScript",
   "version": "0.0.1",
-  "homepage": "https://github.com/rap1ds/option",
+  "homepage": "https://github.com/rap1ds/optional",
   "author": {
     "name": "Mikko Koski",
     "email": "mikkokos@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/rap1ds/option.git"
+    "url": "git://github.com/rap1ds/optional.git"
   },
   "bugs": {
-    "url": "https://github.com/rap1ds/option/issues"
+    "url": "https://github.com/rap1ds/optional/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/rap1ds/option/blob/master/LICENSE-MIT"
+      "url": "https://github.com/rap1ds/optional/blob/master/LICENSE-MIT"
     }
   ],
   "main": "lib/option",

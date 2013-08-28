@@ -34,7 +34,7 @@ var noneOpt = Optional.None();
 ### Usage in browser with RequireJS
 
 ```javascript
-require(['Optional'], function(Optional) {
+require(['optional'], function(Optional) {
     var Some = Optional.Some;
     var None = Optional.None;
 

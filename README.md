@@ -1,5 +1,49 @@
 # Option structure in JavaScript
 
+## Installation and usage
+
+```bash
+npm install --save optionally
+```
+
+### Usage in Node
+
+```javascript
+/* require */
+var Optional = require('optional');
+var Some = Optional.Some;
+var None = Optional.None;
+
+/* use */
+var someOpt = Optional.Some('value');
+var noneOpt = Optional.None();
+```
+
+### Usage in browser
+
+```javascript
+/* add script tag and use global variable 'Optional' */
+var Some = Optional.Some;
+var None = Optional.None;
+
+/* use */
+var someOpt = Optional.Some('value');
+var noneOpt = Optional.None();
+```
+
+### Usage in browser with RequireJS
+
+```javascript
+require(['Optional'], function(Optional) {
+    var Some = Optional.Some;
+    var None = Optional.None;
+
+    /* use */
+    var someOpt = Optional.Some('value');
+    var noneOpt = Optional.None();
+})
+```
+
 ## Create new option type
 
 ```javascript
@@ -14,6 +58,16 @@ someOpt.isSome()  // true
 someOpt.isNone()  // false
 noneOpt.isSome()  // false
 noneOpt.isNone()  // true
+
+Optional.isSome(someOpt)    // true
+Optional.isNone(someOpt)    // false
+Optional.isSome(noneOpt)    // false
+Optional.isNone(noneOpt)    // true
+
+Optional.isSome("I'm not Some")         // false
+Optional.isNone("I'm not None")         // false
+Optional.isOption("And I'm not Option") // false
+Optional.isOption(Some("But I am"))     // true
 ```
 
 ## Access the value

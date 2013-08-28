@@ -1,10 +1,40 @@
 'use strict';
 
-var Some = require('../lib/option').Some;
-var None = require('../lib/option').None;
+var option = require('../lib/option');
+var Some = option.Some;
+var None = option.None;
 var expect = require('expect.js');
 
 describe('Option', function() {
+  it('#isSome', function() {
+    expect(option.isSome(Some('value'))).to.be.eql(true);
+    expect(option.isSome(None())).to.be.eql(false);
+    expect(option.isSome(Some(undefined))).to.be.eql(true);
+    expect(option.isSome(false)).to.be.eql(false);
+    expect(option.isSome('string')).to.be.eql(false);
+    expect(option.isSome(null)).to.be.eql(false);
+  });
+
+  it('#isNone', function() {
+    expect(option.isNone(Some('value'))).to.be.eql(false);
+    expect(option.isNone(None())).to.be.eql(true);
+    expect(option.isNone(Some(undefined))).to.be.eql(false);
+    expect(option.isNone(false)).to.be.eql(false);
+    expect(option.isNone('string')).to.be.eql(false);
+    expect(option.isNone(null)).to.be.eql(false);
+  });
+
+  it('#isOption', function() {
+    expect(option.isOption(Some('value'))).to.be.eql(true);
+    expect(option.isOption(None())).to.be.eql(true);
+    expect(option.isOption(Some(undefined))).to.be.eql(true);
+    expect(option.isOption(false)).to.be.eql(false);
+    expect(option.isOption('string')).to.be.eql(false);
+    expect(option.isOption(null)).to.be.eql(false);
+  });
+});
+
+describe('Some and None', function() {
   it('#valueOf', function() {
     expect(Some('value').valueOf()).to.be.eql('value');
     expect(Some(undefined).valueOf()).to.be.eql(undefined);

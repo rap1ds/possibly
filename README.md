@@ -3,44 +3,44 @@
 ## Installation and usage
 
 ```bash
-npm install --save optionally
+npm install --save possibly
 ```
 
 ### Usage in Node
 
 ```javascript
 /* require */
-var Optional = require('optional');
-var Some = Optional.Some;
-var None = Optional.None;
+var Possibly = require('possiblt');
+var Some = Possibly.Some;
+var None = Possibly.None;
 
 /* use */
-var someOpt = Optional.Some('value');
-var noneOpt = Optional.None();
+var someOpt = Possibly.Some('value');
+var noneOpt = Possibly.None();
 ```
 
 ### Usage in browser
 
 ```javascript
-/* add script tag and use global variable 'Optional' */
-var Some = Optional.Some;
-var None = Optional.None;
+/* add script tag and use global variable 'Possibly' */
+var Some = Possibly.Some;
+var None = Possibly.None;
 
 /* use */
-var someOpt = Optional.Some('value');
-var noneOpt = Optional.None();
+var someOpt = Possibly.Some('value');
+var noneOpt = Possibly.None();
 ```
 
 ### Usage in browser with RequireJS
 
 ```javascript
-require(['optional'], function(Optional) {
-    var Some = Optional.Some;
-    var None = Optional.None;
+require(['possibly'], function(Possibly) {
+    var Some = Possibly.Some;
+    var None = Possibly.None;
 
     /* use */
-    var someOpt = Optional.Some('value');
-    var noneOpt = Optional.None();
+    var someOpt = Possibly.Some('value');
+    var noneOpt = Possibly.None();
 })
 ```
 
@@ -59,15 +59,15 @@ someOpt.isNone()  // false
 noneOpt.isSome()  // false
 noneOpt.isNone()  // true
 
-Optional.isSome(someOpt)    // true
-Optional.isNone(someOpt)    // false
-Optional.isSome(noneOpt)    // false
-Optional.isNone(noneOpt)    // true
+Possibly.isSome(someOpt)    // true
+Possibly.isNone(someOpt)    // false
+Possibly.isSome(noneOpt)    // false
+Possibly.isNone(noneOpt)    // true
 
-Optional.isSome("I'm not Some")         // false
-Optional.isNone("I'm not None")         // false
-Optional.isOption("And I'm not Option") // false
-Optional.isOption(Some("But I am"))     // true
+Possibly.isSome("I'm not Some")         // false
+Possibly.isNone("I'm not None")         // false
+Possibly.isOption("And I'm not Option") // false
+Possibly.isOption(Some("But I am"))     // true
 ```
 
 ## Access the value
